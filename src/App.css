@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  background-color: var(--secondary-color); /* Light gray backdrop */
+  font-family: sans-serif;
+  width: 100%;
+}
+
+.app {
+  width: var(--container-width);
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  background: var(--background-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+}

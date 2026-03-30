@@ -1,0 +1,88 @@
+.task-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the inputs inside the form */
+  gap: 1rem;
+}
+
+.input-main,
+.input-second,
+.input-date,
+.input-submit {
+  width: 100%; /* Forces them to respect the container width */
+  box-sizing: border-box; /* Ensures padding doesn't break the width */
+  margin: 0 !important; /* Overrides the 10px margins from previous code */
+}
+
+.input-main {
+  background-color: var(--primary-color);
+  color: var(--text-visible);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.input-second {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 0.8rem;
+  min-height: 100px;
+}
+
+.input-submit {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.task-item {
+  background-color: #3a2a2a;
+  border-width: thick;
+  border-color: var(--text-visible);
+  border-style: solid;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 3vh;
+  margin-bottom: 3vh;
+}
+
+.task-item > * {
+  margin-bottom: 2vh;
+  max-width: 100%;
+}
+
+.task-item h3 {
+  color: #d8f73c;
+  width: 100%;
+}
+.task-item p {
+  color: #858585;
+  width: 100%;
+}
+.task-item button {
+  background-color: rgb(88, 72, 5);
+  border-style: hidden;
+  width: clamp(100px, 13vw, 600px);
+  height: 3vh;
+  margin: 0.2vw  3vh;
+
+  border-radius: 10px;
+  box-shadow: #332f2f;
+}
+
+.task-item.completed {
+  background-color: #29312b;
+}
+.task-item.completed h3 {
+  color: #5ae1ff;
+}
+
+.task-item button.completed-button {
+  background-color: #2b3402;
+}
