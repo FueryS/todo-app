@@ -4,6 +4,9 @@
   align-items: center; /* Centers the inputs inside the form */
   gap: 1rem;
 }
+.task-form h2 {
+  color: var(--body-color);
+}
 
 .input-main,
 .input-second,
@@ -11,16 +14,19 @@
 .input-submit {
   width: 100%; /* Forces them to respect the container width */
   box-sizing: border-box; /* Ensures padding doesn't break the width */
-  margin: 0 !important; /* Overrides the 10px margins from previous code */
+  margin: 0; /* Overrides the 10px margins from previous code */
 }
 
 .input-main {
   background-color: var(--primary-color);
-  color: var(--text-visible);
+  color: var(--text-main);
+
+  font-weight: 700;
+
   border: none;
   border-radius: 0.5rem;
   padding: 0.8rem;
-  font-size: 1.1rem;
+  font-size: 1.4rem; /* Modify this for reposiveness */
 }
 
 .input-second {
@@ -29,6 +35,12 @@
   border-radius: 0.5rem;
   padding: 0.8rem;
   min-height: 100px;
+  height: fit-content;
+  font-size: 16px;
+
+  resize: none;
+
+  scrollbar-width: none;
 }
 
 .input-submit {
@@ -42,47 +54,83 @@
 }
 
 .task-item {
-  background-color: #3a2a2a;
-  border-width: thick;
-  border-color: var(--text-visible);
-  border-style: solid;
-  border-radius: 10px;
-  overflow: hidden;
-  padding: 3vh;
-  margin-bottom: 3vh;
-}
+  --bg-color: var(--pending-task-color);
 
-.task-item > * {
-  margin-bottom: 2vh;
-  max-width: 100%;
-}
+  background-color: var(--bg-color);
+  width: 100%;
+  height: fit-content;
 
-.task-item h3 {
-  color: #d8f73c;
-  width: 100%;
-}
-.task-item p {
-  color: #858585;
-  width: 100%;
-}
-.task-item button {
-  background-color: rgb(88, 72, 5);
-  border-style: hidden;
-  width: clamp(100px, 13vw, 600px);
-  height: 3vh;
-  margin: 0.2vw  3vh;
+  align-self: center;
+  padding: 10px;
+  margin: 0;
 
   border-radius: 10px;
-  box-shadow: #332f2f;
+  border: 2px solid color-mix(in oklch, var(--bg-color), black 5%);
+  border-style: solid groove;
+
+  filter: drop-shadow(0 0 0px color-mix(in oklch, var(--bg-color), black 0%));
+
+  transition:
+    transform 0.5s,
+    filter 0.5s;
 }
 
 .task-item.completed {
-  background-color: #29312b;
-}
-.task-item.completed h3 {
-  color: #5ae1ff;
+  --bg-color: var(--completed-task-color);
 }
 
-.task-item button.completed-button {
-  background-color: #2b3402;
+.task-item h3 {
+  font-size: clamp(15px, 1vw, 70px);
+}
+.task-item.completed h3 {
+  text-decoration: line-through rgba(0, 255, 162, 0.7) 2px;
+}
+
+.Date {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  transform: translateY(-14px);
+  text-align: right;
+  z-index: 100;
+}
+
+.task-item:hover {
+  transform: scale(1.022);
+  filter: drop-shadow(0 0 10px color-mix(in oklch, var(--bg-color), black 50%));
+}
+
+.Button-Pack {
+  display: flex;
+  width: max(35%, fit-content);
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+.task-item button {
+  padding: 4px 12px;
+  font-weight: 700;
+  font-size: 15px;
+  color: color-mix(in oklch, var(--background-color), #000 70%);
+
+  width: fit-content;
+  height: 30px;
+
+  border: 0px groove color-mix(in oklch, var(--bg-color), rgb(0, 0, 0) 5%);
+  background-color: color-mix(
+    in oklch,
+    var(--bg-color),
+    rgb(255, 255, 255) 60%
+  );
+  border-radius: 18px;
+
+  transition:
+    border 0.1s,
+    border-radius 0.4s;
+}
+
+.task-item button:hover {
+  border: 2px groove color-mix(in oklch, var(--bg-color), rgb(0, 0, 0) 5%);
+  border-radius: 2px;
 }

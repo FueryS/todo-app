@@ -1,18 +1,31 @@
 body {
   margin: 0;
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  background-color: var(--secondary-color); /* Light gray backdrop */
-  font-family: sans-serif;
+  justify-content: center;
+  background-color: var(--body-color);
+  font-family: "Noto Sans";
   width: 100%;
 }
 
 .app {
-  width: var(--container-width);
-  max-width: var(--max-width);
-  margin: 2rem auto;
+  width: fit-content;
+  min-width: 40vw;
+  margin: 30px 0;
   background: var(--background-color);
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: var(--shadow-md);
+  padding: 10px 30px 60px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px oklch(52.521% 0.05028 272.009);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: left;
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 10px 10px 30px 10px;
+    margin: 0;
+    width: 100%;
+  }
 }

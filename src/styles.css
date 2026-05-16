@@ -1,11 +1,19 @@
 :root {
+  /* Color Pallet */
   --primary-color: #9e9ceb;
-  --secondary-color: #000000;
-  --background-color: #606060;
-  --text-main: #1f2937;
+  --secondary-color: #b6f7f6;
+  --background-color: oklch(0.87 0.065 274.039);
+  --body-color: oklch(0.962 0.018 272.314);
+  --text-main: oklch(0.446 0.043 257.281);
   --text-visible: #ffffff;
   --border-color: #e5e7eb;
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  --container-width: 90%;
-  --max-width: 600px;
+
+  --pending-task-color: oklch(0.962 0.059 95.617);
+  --completed-task-color: oklch(0.967 0.067 122.328);
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

@@ -1,11 +1,16 @@
 import "./components.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { addTask } from "../taskService";
 
 function TaskForm() {
   const [Title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [date, setDate] = useState("");
+
+  useEffect(() => {
+    const today = new Date(); // Temporary soultion to null date problem
+    setDate(today);
+  }, []);
 
   const onClick = () => {
     addTask(Title, body, date);
@@ -23,6 +28,7 @@ function TaskForm() {
           onChange={(e) => {
             setTitle(e.target.value);
           }}
+          required
         />
         <br />
         <textarea

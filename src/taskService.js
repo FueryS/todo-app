@@ -9,89 +9,87 @@ const columnObjectID = "objectId";
 
 export const fetchAllTask = async () => {
   try {
-    //Create a query object
-    const query = new Parse.Query(import.meta.env.VITE_PARSE_CLASS_NAME);
+    const response = await fetch("/api/getAllTask");
+    if (!response.ok) {
+      console.log(`HTTP error! status: ${response.status}`);
+      return [];
+    }
 
-    //Sort everything in decending date so the most recent entry is at top
-    query.descending(columnCreatedAt);
-
-    //Find every entry in the data base
-    const queryResult = await query.find();
-
-    //Convert the result into a mapped json
-    const result = queryResult.map((task) => ({
-      id: task.id,
-      ...task.toJSON(),
-    }));
-
-    console.log(result);
-
-    return result;
-  } catch (error) {
-    console.log(error);
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    console.log(e);
     return [];
   }
 };
 
 export const addTask = async (title, body, date) => {
   try {
-    //create a query Object
-    const query = new Parse.Object(import.meta.env.VITE_PARSE_CLASS_NAME);
+    const data = { Heading: title, Discription: body, Date: date };
 
-    //add data to the DB
-    query.set(columTitle, title);
-    query.set(columnBody, body);
-    query.set(columnStatis, false);
+    console.log(data);
 
-    if (date) {
-      //If date is not empty
-      query.set(columnDueDate, new Date(date)); //convert the data type to date
+    const response = await fetch("/api/addTask", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      console.log(`HTTP error! status: ${response.status}`);
     }
 
-    //Save changes
-    const savedQuery = await query.save();
-
-    //Print result
-    console.log({ id: savedQuery, ...savedQuery.toJSON() });
-
-    //return the task immediatly, no need for UI to access the data base to update
-    return { id: savedQuery.id, ...savedQuery.toJSON() };
-  } catch (error) {
-    console.log(error);
-    return null; //UI will know its an error
+    const result = await response.json();
+    console.log("Success: ", result);
+    return result;
+  } catch (e) {
+    console.error("Error during POST request:", e);
+    return [];
   }
 };
 
 export const updateTask = async (target, value) => {
   try {
-    //create a pointer to the class
-    const query = new Parse.Object(import.meta.env.VITE_PARSE_CLASS_NAME);
+    const data = { status: value };
 
-    //tell parse which value needs to be changed
-    query.set(columnObjectID, target);
+    const query = await fetch(`/api/update/${target}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
 
-    //set the value
-    query.set(columnStatis, value);
+    if (!query.ok) {
+      console.log("HTTP Error: ", query.status);
+      return [];
+    }
 
-    //save
-    query.save();
-    console.log("Updated task succesfully");
-    return value;
+    console.log("Success update");
+
+    return query;
   } catch (e) {
-    console.log(target, value);
-    console.log(e);
-    return null;
+    console.log("Update failed: ", e);
+    return [];
   }
 };
 
 export const deleteTask = async (target) => {
-  const query = new Parse.Object(import.meta.env.VITE_PARSE_CLASS_NAME);
-  query.set(columnObjectID, target);
   try {
-    await query.destroy();
-    return null;
+    const query = await fetch(`/api/delete/${target}`, {
+      method: "DELETE",
+    });
+
+    if (!query.ok) {
+      console.log("HTTP Error!: ", query);
+      return [];
+    }
+
+    return query;
   } catch (e) {
-    console.log("deleteTask():\n", e);
-    return null;
+    console.log(e);
+    return [];
   }
 };

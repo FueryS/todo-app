@@ -17,11 +17,11 @@ function TaskList() {
 
   const onToggle = (id, newStatus) => {
     setTasks((prev) =>
-      prev.map((t) => (t.id === id ? { ...t, completed: newStatus } : t)),
+      prev.map((t) => (t._id === id ? { ...t, status: newStatus } : t)),
     );
   };
   const onDelete = (id) => {
-    setTasks((prev) => prev.filter((t) => t.id !== id));
+    setTasks((prev) => prev.filter((t) => t._id !== id));
   };
 
   return (
@@ -31,7 +31,7 @@ function TaskList() {
           task={task}
           onToggle={onToggle}
           onDelete={onDelete}
-          key={task.id}
+          key={task._id}
         />
       ))}
     </>
