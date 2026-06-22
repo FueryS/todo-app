@@ -19,7 +19,7 @@ import TaskForm from "./Screens/TaskForm";
 import LoginPage from "./Screens/LoginPage";
 import SignUpPage from "./Screens/SignUpPage";
 
-import { getSession, deleteSessionCookie } from "./Services/CookieService";
+import { getSession, deleteSessionCookie } from "./Services/cookieService";
 
 function ProtectedRoute({ children }) {
   const session = getSession();
