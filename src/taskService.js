@@ -1,12 +1,3 @@
-import Parse from "./parseConfig";
-
-const columnCreatedAt = "createdAt"; //The date of which the entry was created
-const columTitle = "title";
-const columnBody = "description";
-const columnStatis = "completed";
-const columnDueDate = "duedate";
-const columnObjectID = "objectId";
-
 export const fetchAllTask = async () => {
   try {
     const response = await fetch("/api/getAllTask");
@@ -25,6 +16,8 @@ export const fetchAllTask = async () => {
 
 export const addTask = async (title, body, date) => {
   try {
+    if (title == "") return;
+
     const data = { Heading: title, Discription: body, Date: date };
 
     console.log(data);
