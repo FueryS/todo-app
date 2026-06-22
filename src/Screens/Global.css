@@ -1,0 +1,179 @@
+/* ============================================================== */
+/* ======================== Add Form ============================ */
+/* ============================================================== */
+
+.AddForm-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 10px;
+  box-shadow: 0 0 20px;
+
+  gap: 20px;
+  padding: 20px;
+  background: var(--background-s-c);
+}
+
+.back-drop {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.251);
+}
+
+.input {
+  width: min(90vw, 500px);
+
+  padding: 8px;
+  font-family: var(--text-regular-p-f);
+
+  border-radius: 20px;
+  border: none;
+  outline-color: var(--background-p-c);
+  background-color: var(--background-p-c);
+}
+
+.title-input {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.body-input {
+  font-size: 1.1rem;
+  font-family: var(--text-special-p-f);
+
+  resize: none;
+  overflow-y: hidden;
+  min-height: 10px;
+  max-height: 100px;
+  border-radius: 10px;
+
+  scrollbar-width: none;
+}
+
+.date-input {
+  width: fit-content;
+
+  border-radius: 3px;
+  font-weight: 600;
+
+  background-color: var(--item-completed-s-c);
+}
+
+.submit-button {
+  width: fit-content;
+
+  font-size: 1.3rem;
+  font-weight: 900;
+  padding: 5px 20px;
+
+  background-color: var(--button-failed-p-c);
+  color: var(--button-important-p-c);
+}
+
+/* ===================================================================*/
+/* =========================== LoginPage.css ========================*/
+/* ===================================================================*/
+
+.login-page {
+  min-height: 100vh;
+  background-color: var(--background-p-c);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 14px;
+  box-sizing: border-box;
+  font-family: var(--text-regular-p-f);
+}
+
+.login-card {
+  width: min(92vw, 560px);
+  background-color: var(--item-pending-p-c);
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.login-title {
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+  color: var(--text-bold-p-c);
+}
+
+.login-subtitle {
+  margin: 0 0 8px 0;
+  padding: 0;
+  color: var(--text-hero-s-c);
+  font-size: 14px;
+}
+
+.login-input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid var(--background-s-c);
+
+  font-family: var(--text-regular-p-f);
+  font-size: 16px;
+
+  outline: none;
+  background-color: var(--background-p-c);
+}
+
+.login-input:focus {
+  border-color: var(--button-pending-p-c);
+}
+
+.auth-link-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--background-s-c);
+  font-family: var(--text-regular-p-f);
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+/* ===================================================================*/
+/* ========================== TaskList ===============================*/
+/* ===================================================================*/
+
+.task-page-shell {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 17px;
+
+  width: min(92vw, 560px);
+  min-height: 100vh;
+
+  box-sizing: border-box;
+  padding: 14px;
+  margin: 10px auto;
+
+  background-color: var(--background-p-c);
+  overflow-y: auto;
+}

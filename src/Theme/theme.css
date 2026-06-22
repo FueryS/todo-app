@@ -1,0 +1,52 @@
+/**
+ * THIS FILE HAS THE COMMON THEME VALUES:
+ *
+ * This file stores reusable colors, shadows, radius, spacing, and layout values.
+ * UI components should use this file instead of hardcoding colors directly.
+ *
+ * Theme vibe:
+ *      - Soft fantasy / Genshin-inspired
+ *      - Kazuha-style calm colors
+ *      - Maple red, cream background, soft green, warm gold
+ *      - Clean readable UI, not too dark
+ */
+
+:root {
+  /* BACKGROUND COLOR */
+  --background-p-c: #fefae0;
+  --background-s-c: #a77f60;
+
+  /* ITEM COLORS */
+  --item-completed-p-c: #d0f4de;
+  --item-pending-p-c: #fbf8cc;
+  --item-failed-p-c: #f8ad9d;
+
+  --item-completed-s-c: #a5d8b8;
+  --item-pending-s-c: #e6e2a4;
+  --item-failed-s-c: #53261d;
+
+  /* BUTTON COLORS */
+  --button-completed-p-c: #a2f17a;
+  --button-pending-p-c: #d6c849;
+  --button-failed-p-c: #995648;
+  --button-important-p-c: #fcd5ce;
+  --button-important-s-c: #eee1d7;
+
+  /* TEXT COLORS */
+  --text-hero-p-c: #707070;
+  --text-hero-s-c: #777;
+  --text-bold-p-c: #000;
+  --text-bold-s-c: #fff;
+  --text-shy-p-c: #9b9b9b;
+  --text-shy-s-c: #ffffff40;
+
+  /* TEXT WEIGHT */
+  --text-bold-p-w: 700;
+  --text-semi-bold-p-w: 600;
+  --text-regular-p-w: 400;
+  --text-light-p-w: 300;
+
+  /* TEXT FONT */
+  --text-special-p-f: Indie Flower;
+  --text-regular-p-f: Kanit;
+}

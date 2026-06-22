@@ -1,0 +1,161 @@
+.container-vertical {
+  --bg: var(--item-failed-p-c);
+  background-color: var(--bg);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden;
+
+  transition: box-shadow 0.5s;
+}
+
+.container-vertical.hovering {
+  box-shadow: 0 7px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.container-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ================= HEADER ================= */
+
+.headding {
+  font-weight: var(--text-bold-p-w);
+  color: var(--text-bold-p-c);
+  word-spacing: 3%;
+}
+
+.date {
+  font-weight: var(--text-light-p-w);
+  opacity: 0.25;
+  font-size: 14px;
+}
+
+/* ================= BODY ================= */
+
+.body-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  transition: max-height 0.4s ease;
+}
+
+/* collapsed = about 2 lines of your body text */
+.body-wrapper.collapsed {
+  max-height: 3.2em;
+}
+
+/* expanded = large enough to show full content */
+.body-wrapper.expanded {
+  max-height: 500px;
+}
+
+/* clamp only when collapsed */
+.body {
+  --lineclamp: 2;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--lineclamp);
+  line-clamp: var(--lineclamp);
+  overflow: hidden;
+}
+
+/* fade overlay when collapsed and overflowing */
+.body-wrapper.bodyC::after {
+  content: "▽";
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 2.5rem;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* ================= BUTTONS ================= */
+
+.button-storage {
+  overflow: hidden;
+  display: flex;
+  max-height: 0;
+  transition: max-height 0.5s ease;
+}
+
+.button-storage.hovering {
+  max-height: 30px;
+}
+
+/* ================= VARIANTS ================= */
+
+.pending {
+  --bg: var(--item-pending-s-c);
+}
+
+.pending > .header {
+  display: flex;
+  background-color: var(--item-pending-s-c);
+}
+
+.completed {
+  --bg: var(--item-completed-p-c);
+}
+
+.completed > .header {
+  background-color: var(--item-completed-s-c);
+}
+
+.failed {
+  --bg: var(--item-failed-p-c);
+}
+
+.failed > .header {
+  background-color: var(--item-failed-s-c);
+}
+
+.failed > * .date {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.failed h1 {
+  color: var(--item-failed-p-c);
+}
+
+/* ================= GLOBAL INSIDE ITEM ================= */
+
+h1 {
+  font-size: 20px;
+  max-width: fit-content;
+  max-height: fit-content;
+  padding: 0px 10px;
+  margin: 0;
+}
+
+p {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 4px;
+  margin: 0;
+  font-size: 12px;
+  text-align: justify;
+  white-space: pre-wrap;
+}
+
+div {
+  font-family: var(--text-regular-p-f);
+}

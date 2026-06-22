@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 *.env
 *.env.production
+
+# Slef Materials
+Text Self Material

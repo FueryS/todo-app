@@ -1,5 +1,5 @@
 import "./components.css";
-import { updateTask, deleteTask } from "../taskService";
+import { updateTask, deleteTask } from "../Services/taskService";
 
 function TaskItem({ task, onToggle, onDelete }) {
   const handleComplete = async () => {
