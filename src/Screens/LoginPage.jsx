@@ -2,7 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-import { setSession } from "../Services/CookieService";
+import { setSession } from "../Services/cookieService";
 import { AppButton } from "../components/common/AppButton";
 import "./Global.css";
 

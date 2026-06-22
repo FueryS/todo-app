@@ -1,4 +1,4 @@
-import { getSession } from "./CookieService";
+import { getSession } from "./cookieService";
 
 /**
  * THIS FILE HAS THE SERVICES RELATED TO TASKS:
