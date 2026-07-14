@@ -58,11 +58,12 @@ function HomePage() {
     <div className="dashboard-container">
       <header className="dashboard-header">
         <div className="header-brand">
-          <img src="/image.png" className="brand-logo-img" alt="Logo" />
           <h1 className="brand-title">Goal-Window</h1>
         </div>
         <div className="header-user-actions">
-          <span className="user-welcome">Welcome, <strong>{userName}</strong></span>
+          <span className="user-welcome">
+            Welcome, <strong>{userName}</strong>
+          </span>
           <button className="logout-button" onClick={handleLogout}>
             Logout
           </button>
