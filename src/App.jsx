@@ -58,8 +58,8 @@ function HomePage() {
     <div className="dashboard-container">
       <header className="dashboard-header">
         <div className="header-brand">
-          <span className="brand-logo">🌌</span>
-          <h1 className="brand-title">TaskSphere</h1>
+          <span className="brand-logo">🍁</span>
+          <h1 className="brand-title">Goal-Window</h1>
         </div>
         <div className="header-user-actions">
           <span className="user-welcome">Welcome, <strong>{userName}</strong></span>

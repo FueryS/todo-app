@@ -23,23 +23,23 @@
 /* Pending / Mark Done Button */
 .button-pending {
   background-color: var(--button-pending-p-c);
-  color: #ffffff;
+  color: var(--text-bold-s-c);
 }
 
 .button-pending:hover {
   background-color: var(--button-pending-hover);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
 }
 
 /* Completed / Undo Button */
 .button-completed {
   background-color: var(--button-completed-p-c);
-  color: #ffffff;
+  color: var(--text-bold-p-c);
 }
 
 .button-completed:hover {
   background-color: var(--button-completed-hover);
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
 }
 
 /* Failed / Delete Primary Button */
@@ -51,22 +51,20 @@
 
 .button-failed:hover {
   background-color: var(--button-failed-hover);
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Important / Delete Secondary Button */
 .button-important {
   background-color: var(--button-important-p-c);
-  color: var(--text-hero-p-c);
-  border-left: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--text-bold-p-c);
+  border-left: 1px solid rgba(167, 127, 96, 0.15);
 }
 
 .button-important:hover {
-  background-color: #ef4444; /* Alert red on delete hover */
-  color: #ffffff;
+  background-color: var(--button-important-hover);
 }
 
-/* Legacy styles (kept for absolute safety) */
+/* Legacy styles */
 .elevated-drop {
   display: none;
 }

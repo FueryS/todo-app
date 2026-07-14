@@ -1,54 +1,55 @@
 /**
  * theme.css
- * Modern Slate-Indigo Dark Theme
- * 🌌 Immersive, sleek, and rich design aesthetics
+ * Goal-Window Bright Kazuha-Inspired Theme
+ * 🍁 Soft fantasy colors: cream background, maple red, soft green, warm gold
  */
 
 :root {
-  /* Font Family overrides */
-  --text-regular-p-f: 'Kanit', 'Inter', system-ui, sans-serif;
+  /* Font Family configuration */
+  --text-regular-p-f: 'Kanit', system-ui, sans-serif;
   --text-special-p-f: 'Indie Flower', cursive;
 
   /* Global Body Background & Layout Colors */
-  --body-color: #030712; /* Slate-950 */
-  --background-p-c: #090d16; /* Slate-900-esque */
-  --background-s-c: #111827; /* Slate-900 */
-  --card-bg-light: #1f2937; /* Slate-800 */
-  --border-color: #374151; /* Slate-700 */
+  --body-color: #f4f1de; /* Cream body background */
+  --background-p-c: #fefae0; /* Cream primary background */
+  --background-s-c: #a77f60; /* Maple brown secondary background */
+  --border-color: rgba(167, 127, 96, 0.25); /* Muted maple brown border */
+  --card-bg-light: #ffffff; /* White background for list items */
 
-  /* Task Status Card Backgrounds (Gradients are constructed with these) */
-  --item-pending-p-c: #1e1b4b; /* Indigo-950 */
-  --item-pending-s-c: #312e81; /* Indigo-900 */
-  --item-pending-border: #4f46e5; /* Indigo-600 */
+  /* Task Status Card Backgrounds */
+  --item-pending-p-c: #fbf8cc; /* Warm gold/yellow-pending background */
+  --item-pending-s-c: #e6e2a4; /* Muted pending accent */
+  --item-pending-border: #d6c849; /* Pending border */
 
-  --item-completed-p-c: #064e3b; /* Emerald-950 */
-  --item-completed-s-c: #065f46; /* Emerald-900 */
-  --item-completed-border: #10b981; /* Emerald-500 */
+  --item-completed-p-c: #d0f4de; /* Soft green-completed background */
+  --item-completed-s-c: #a5d8b8; /* Muted completed accent */
+  --item-completed-border: #a2f17a; /* Completed border */
 
-  --item-failed-p-c: #4c0519; /* Rose-950 */
-  --item-failed-s-c: #881337; /* Rose-900 */
-  --item-failed-border: #f43f5e; /* Rose-500 */
+  --item-failed-p-c: #f8ad9d; /* Maple red/salmon-failed background */
+  --item-failed-s-c: #53261d; /* Deep red-failed accent */
+  --item-failed-border: #995648; /* Failed border */
 
   /* Button Color Palette */
-  --button-pending-p-c: #4f46e5; /* Indigo-600 */
-  --button-pending-hover: #6366f1; /* Indigo-500 */
+  --button-pending-p-c: #d6c849;
+  --button-pending-hover: #e2d45a;
 
-  --button-completed-p-c: #10b981; /* Emerald-500 */
-  --button-completed-hover: #34d399; /* Emerald-400 */
+  --button-completed-p-c: #a5d8b8;
+  --button-completed-hover: #bde9cf;
 
-  --button-failed-p-c: #f43f5e; /* Rose-500 */
-  --button-failed-hover: #fb7185; /* Rose-400 */
+  --button-failed-p-c: #995648;
+  --button-failed-hover: #aa6556;
 
-  --button-important-p-c: #374151; /* Slate-700 */
-  --button-important-hover: #4b5563; /* Slate-600 */
+  --button-important-p-c: #fcd5ce;
+  --button-important-hover: #fbc4bb;
+  --button-important-s-c: #eee1d7;
 
   /* Typography Colors */
-  --text-hero-p-c: #f3f4f6; /* Gray-100 */
-  --text-hero-s-c: #9ca3af; /* Gray-400 */
-  --text-bold-p-c: #ffffff; /* White */
-  --text-bold-s-c: #f3f4f6; 
-  --text-shy-p-c: #6b7280; /* Gray-500 */
-  --text-shy-s-c: rgba(255, 255, 255, 0.1);
+  --text-hero-p-c: #5c4d3c; /* Dark warm gray-brown */
+  --text-hero-s-c: #7f7060; /* Muted warm gray-brown */
+  --text-bold-p-c: #2c1a0c; /* Deep espresso text */
+  --text-bold-s-c: #ffffff; 
+  --text-shy-p-c: #a39587; /* Light warm gray */
+  --text-shy-s-c: rgba(167, 127, 96, 0.15);
 
   /* Font Weights */
   --text-bold-p-w: 700;
@@ -56,10 +57,10 @@
   --text-regular-p-w: 400;
   --text-light-p-w: 300;
 
-  /* Glassmorphism & Shadow tokens */
-  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.08);
-  --glow-indigo: 0 0 15px rgba(99, 102, 241, 0.35);
-  --glow-emerald: 0 0 15px rgba(16, 185, 129, 0.35);
-  --glow-rose: 0 0 15px rgba(244, 63, 94, 0.35);
+  /* Shadows and Borders */
+  --premium-shadow: 0 8px 24px rgba(167, 127, 96, 0.15);
+  --soft-shadow: 0 4px 12px rgba(167, 127, 96, 0.08);
+  --glow-pending: 0 0 12px rgba(214, 200, 73, 0.25);
+  --glow-completed: 0 0 12px rgba(162, 241, 122, 0.25);
+  --glow-failed: 0 0 12px rgba(153, 86, 72, 0.25);
 }

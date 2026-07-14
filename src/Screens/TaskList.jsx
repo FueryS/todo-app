@@ -22,6 +22,18 @@ function TaskList({ triggerReload }) {
     loadData();
   }, [triggerReload]);
 
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (!event.target.closest(".container-vertical")) {
+        setActive(undefined);
+      }
+    };
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
   const defineVarient = (task) => {
     if (task.status) return "completed";
 

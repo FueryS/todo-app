@@ -12,9 +12,9 @@
   z-index: 999;
   width: 100vw;
   height: 100vh;
-  background: rgba(3, 7, 18, 0.6); /* Translucent dark */
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(44, 26, 12, 0.35); /* Soft espresso overlay */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .AddForm-container {
@@ -22,10 +22,10 @@
   flex-direction: column;
   width: min(90vw, 500px);
   padding: 32px;
-  background: rgba(17, 24, 39, 0.95); /* Slate-900 */
-  border: var(--glass-border);
+  background: #ffffff; /* Warm paper white */
+  border: 1px solid rgba(167, 127, 96, 0.25);
   border-radius: 20px;
-  box-shadow: var(--glass-shadow);
+  box-shadow: var(--premium-shadow);
   gap: 24px;
   box-sizing: border-box;
 }
@@ -36,9 +36,9 @@
   font-family: var(--text-regular-p-f);
   color: var(--text-bold-p-c);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(167, 127, 96, 0.2);
   outline: none;
-  background-color: rgba(255, 255, 255, 0.03);
+  background-color: #fefae0; /* Cream background inside inputs */
   box-sizing: border-box;
   transition: all 0.3s ease;
 }
@@ -48,15 +48,15 @@
 }
 
 .input:focus {
-  border-color: var(--button-pending-p-c);
-  background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: var(--glow-indigo);
+  border-color: var(--background-s-c);
+  background-color: #ffffff;
+  box-shadow: var(--glow-pending);
 }
 
 .title-input {
   font-size: 1.8rem;
   font-weight: 700;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 2px solid rgba(167, 127, 96, 0.15);
   border-radius: 0;
   padding-left: 0;
   padding-right: 0;
@@ -64,7 +64,7 @@
 }
 
 .title-input:focus {
-  border-bottom-color: var(--button-pending-p-c);
+  border-bottom-color: var(--background-s-c);
   background-color: transparent;
   box-shadow: none;
 }
@@ -82,7 +82,7 @@
 .date-input {
   width: 100%;
   font-weight: 500;
-  color-scheme: dark; /* Adapts native date picker to dark theme */
+  color-scheme: light; /* Normal light calendar picker */
 }
 
 .submit-button {
@@ -92,17 +92,17 @@
   padding: 12px;
   border: none;
   border-radius: 12px;
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  background: linear-gradient(135deg, #a77f60, #995648); /* Maple gradient */
   color: #fff;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  box-shadow: 0 4px 12px rgba(153, 86, 72, 0.2);
   transition: all 0.3s ease;
 }
 
 .submit-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4), var(--glow-indigo);
-  background: linear-gradient(135deg, #818cf8, #6366f1);
+  box-shadow: 0 6px 16px rgba(153, 86, 72, 0.3), var(--glow-failed);
+  background: linear-gradient(135deg, #b88f70, #aa6556);
 }
 
 .submit-button:active {
@@ -116,7 +116,7 @@
 .login-page {
   min-height: 100vh;
   width: 100%;
-  background: radial-gradient(circle at top, #111827 0%, #030712 100%);
+  background: radial-gradient(circle at top, #fefae0 0%, #f4f1de 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -126,12 +126,10 @@
 
 .login-card {
   width: min(100%, 420px);
-  background: rgba(17, 24, 39, 0.85); /* Slate-900 */
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: var(--glass-border);
+  background: #ffffff; /* White base card */
+  border: 1px solid rgba(167, 127, 96, 0.25);
   border-radius: 24px;
-  box-shadow: var(--glass-shadow);
+  box-shadow: var(--premium-shadow);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -144,7 +142,7 @@
   padding: 0;
   font-size: 32px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-bold-p-c);
   text-align: center;
   letter-spacing: -0.5px;
 }
@@ -161,19 +159,19 @@
   box-sizing: border-box;
   padding: 12px 16px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(167, 127, 96, 0.2);
   outline: none;
-  background-color: rgba(255, 255, 255, 0.03);
-  color: #fff;
+  background-color: #fefae0;
+  color: var(--text-bold-p-c);
   font-family: var(--text-regular-p-f);
   font-size: 16px;
   transition: all 0.3s ease;
 }
 
 .login-input:focus {
-  border-color: var(--button-pending-p-c);
-  background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: var(--glow-indigo);
+  border-color: var(--background-s-c);
+  background-color: #ffffff;
+  box-shadow: var(--glow-pending);
 }
 
 .auth-link-button {
@@ -189,7 +187,7 @@
 }
 
 .auth-link-button:hover {
-  color: #818cf8;
+  color: #995648; /* Maple red on link hover */
   text-decoration: underline;
 }
 
