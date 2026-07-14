@@ -46,17 +46,32 @@ function HomePage() {
 
   const [triggerReload, setTriggerReload] = useState(false);
   const [visibleTaskForm, setVisibleTaskForm] = useState(false);
+  const userName = localStorage.getItem("userName") || "Guest";
 
   function handleLogout() {
     deleteSessionCookie();
+    localStorage.removeItem("userName");
     navigate("/login", { replace: true });
   }
 
   return (
-    <>
-      <AppButton varient="elevated-drop" onClick={handleLogout}>
-        Logout
-      </AppButton>
+    <div className="dashboard-container">
+      <header className="dashboard-header">
+        <div className="header-brand">
+          <span className="brand-logo">🌌</span>
+          <h1 className="brand-title">TaskSphere</h1>
+        </div>
+        <div className="header-user-actions">
+          <span className="user-welcome">Welcome, <strong>{userName}</strong></span>
+          <button className="logout-button" onClick={handleLogout}>
+            Logout
+          </button>
+        </div>
+      </header>
+
+      <main className="dashboard-content">
+        <TaskList triggerReload={triggerReload} />
+      </main>
 
       <TaskForm
         visible={visibleTaskForm}
@@ -66,12 +81,11 @@ function HomePage() {
         }}
       />
 
-      <AppButton varient="icon-add" onClick={() => setVisibleTaskForm(true)}>
-        Add Item <img src={Pin} alt="pin icon" />
-      </AppButton>
-
-      <TaskList triggerReload={triggerReload} />
-    </>
+      <button className="add-task-fab" onClick={() => setVisibleTaskForm(true)}>
+        <span className="fab-plus">+</span>
+        <span className="fab-text">Add Task</span>
+      </button>
+    </div>
   );
 }
 

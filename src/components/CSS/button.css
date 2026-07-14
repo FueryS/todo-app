@@ -1,140 +1,76 @@
-button img {
-  aspect-ratio: 1;
-  width: 28px;
-}
+/* button.css */
 
-.elevated-drop {
-  background-color: var(--background-p-c);
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 25px;
-  gap: 2px;
-
-  position: fixed;
-  width: auto;
-  height: auto;
-  /* right: 0px; */
-  top: 0;
-  right: 0;
-  z-index: 1000;
-
-  box-shadow: 4px -9px 19.1px 14px rgba(0, 0, 0, 0.25);
-  border: none;
-  border-radius: 10px 4px 4px 18px;
-
-  color: var(--text-hero-p-c);
-  font-size: 20px;
-  font-weight: var(--text-semi-bold-p-w);
-  font-family: var(--text-regular-p-f);
-}
-
-.icon-add {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  gap: 2px;
-
-  aspect-ratio: 1;
-  position: fixed;
-  width: fit-content;
-  right: 21px;
-  bottom: 20px;
-  z-index: 700;
-
-  background: var(--button-important-p-c);
-  box-shadow: 0px 1px 17.2px 3px rgba(0, 0, 0, 0.25);
-
-  border-radius: 34px;
-  border: none;
-
-  color: var(--text-hero-s-c);
-  font-family: var(--text-regular-p-f);
-  font-size: 20px;
-  font-weight: var(--text-semi-bold-p-w);
-  line-height: 30px;
-}
-
-.button-completed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.6;
-
-  background-color: var(--button-completed-p-c);
-
-  border: none;
-  border-radius: 0px 10px 10px 10px;
-
-  height: 25px;
-  padding: 3px 12px;
-
-  color: var(--text-bold-s-c);
-  font-weight: var(--text-semi-bold-p-w);
-  font-size: 16px;
-  font-family: var(--text-regular-p-f);
-}
-
-.button-failed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.6;
-
-  width: 100%;
-  height: 25px;
-  padding: 3px 12px;
-
-  background-color: var(--button-failed-p-c);
-
-  border: none;
-  border-radius: 0px 0px 10px 10px;
-
-  color: var(--item-failed-p-c);
-  font-weight: var(--text-semi-bold-p-w);
-  font-size: 16px;
-}
-
-.button-pending {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.6;
-
-  background-color: var(--button-pending-p-c);
-
-  border: none;
-  border-radius: 0px 10px 10px 10px;
-
-  height: 25px;
-  padding: 3px 12px;
-
-  color: var(--text-bold-s-c);
-  font-weight: var(--text-semi-bold-p-w);
-  font-size: 16px;
-  font-family: var(--text-regular-p-f);
-}
-
+/* General button inside task item drawer */
+.button-completed,
+.button-failed,
+.button-pending,
 .button-important {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.6;
-
-  background-color: var(--button-important-p-c);
-
+  flex: 1; /* Stretch to fill drawer width */
+  height: 45px;
+  padding: 0 16px;
   border: none;
-  border-radius: 10px 0px 10px 10px;
-
-  height: 25px;
-  padding: 3px 12px;
-
-  color: var(--text-hero-s-c);
-  font-weight: var(--text-semi-bold-p-w);
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 600;
   font-family: var(--text-regular-p-f);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+/* Pending / Mark Done Button */
+.button-pending {
+  background-color: var(--button-pending-p-c);
+  color: #ffffff;
+}
+
+.button-pending:hover {
+  background-color: var(--button-pending-hover);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Completed / Undo Button */
+.button-completed {
+  background-color: var(--button-completed-p-c);
+  color: #ffffff;
+}
+
+.button-completed:hover {
+  background-color: var(--button-completed-hover);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Failed / Delete Primary Button */
+.button-failed {
+  background-color: var(--button-failed-p-c);
+  color: #ffffff;
+  width: 100%; /* Spans full drawer */
+}
+
+.button-failed:hover {
+  background-color: var(--button-failed-hover);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Important / Delete Secondary Button */
+.button-important {
+  background-color: var(--button-important-p-c);
+  color: var(--text-hero-p-c);
+  border-left: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.button-important:hover {
+  background-color: #ef4444; /* Alert red on delete hover */
+  color: #ffffff;
+}
+
+/* Legacy styles (kept for absolute safety) */
+.elevated-drop {
+  display: none;
+}
+
+.icon-add {
+  display: none;
 }

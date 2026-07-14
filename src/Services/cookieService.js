@@ -92,6 +92,8 @@ export async function setSession(User, pass) {
     };
   }
 
+  localStorage.setItem("userName", response.userName || User);
+
   return response;
 }
 

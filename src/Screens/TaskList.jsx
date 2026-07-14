@@ -25,8 +25,13 @@ function TaskList({ triggerReload }) {
   const defineVarient = (task) => {
     if (task.status) return "completed";
 
-    const date = new Date();
-    if (date > task.date) return "failed";
+    if (task.Date) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const taskDate = new Date(task.Date);
+      taskDate.setHours(0, 0, 0, 0);
+      if (today > taskDate) return "failed";
+    }
 
     return "pending";
   };
@@ -60,7 +65,11 @@ function TaskList({ triggerReload }) {
           body={task.Discription}
           date={task.Date?.split("T")[0]}
           eventFun={() => {
-            onToggle(task._id, !task.status);
+            if (defineVarient(task) === "failed") {
+              onDelete(task._id);
+            } else {
+              onToggle(task._id, !task.status);
+            }
           }}
           deleteFun={() => {
             onDelete(task._id);

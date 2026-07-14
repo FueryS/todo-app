@@ -93,6 +93,7 @@ export async function logIn(User, pass) {
       success: true,
       message: data.message,
       value: data.value,
+      userName: data.userName,
       error: null,
     };
   } catch (e) {

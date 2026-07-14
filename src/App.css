@@ -1,31 +1,176 @@
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   background-color: var(--body-color);
-  font-family: "Noto Sans";
+  font-family: var(--text-regular-p-f);
+  color: var(--text-hero-p-c);
+  width: 100%;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  width: 100%;
+  max-width: 800px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 100px; /* Space for FAB */
+}
+
+/* Glassmorphic Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  margin: 16px 12px 8px 12px;
+  background: rgba(17, 24, 39, 0.7); /* Slate-900 with opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+  z-index: 100;
+  position: sticky;
+  top: 16px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  font-size: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.brand-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(to right, #818cf8, #a78bfa); /* Light indigo to purple */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+.header-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-welcome {
+  font-size: 14px;
+  color: var(--text-hero-s-c);
+}
+
+.user-welcome strong {
+  color: var(--text-bold-p-c);
+}
+
+/* Logout Button */
+.logout-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-hero-p-c);
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.logout-button:hover {
+  background: var(--button-failed-p-c);
+  border-color: var(--item-failed-border);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.logout-button:active {
+  transform: translateY(1px);
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  flex: 1;
   width: 100%;
 }
 
-.app {
-  width: fit-content;
-  min-width: 40vw;
-  margin: 30px 0;
-  background: var(--background-color);
-  padding: 10px 30px 60px 30px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px oklch(52.521% 0.05028 272.009);
-
+/* Premium FAB (Floating Action Button) */
+.add-task-fab {
+  position: fixed;
+  bottom: 24px;
+  right: calc(50% - 70px); /* Center relative to content max-width */
   display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: left;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #6366f1, #4f46e5); /* Indigo gradient */
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-family: var(--text-regular-p-f);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3), var(--glow-indigo);
+  z-index: 600;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@media (max-width: 600px) {
-  .app {
-    padding: 10px 10px 30px 10px;
-    margin: 0;
-    width: 100%;
+@media (min-width: 840px) {
+  .add-task-fab {
+    right: calc(50% - 370px); /* Anchor to the right edge of the central column */
+  }
+}
+
+.add-task-fab:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 14px 28px rgba(79, 70, 229, 0.4), var(--glow-indigo);
+  background: linear-gradient(135deg, #818cf8, #6366f1);
+}
+
+.add-task-fab:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.fab-plus {
+  font-size: 20px;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.add-task-fab:hover .fab-plus {
+  transform: rotate(90deg);
+}
+
+.fab-text {
+  letter-spacing: 0.2px;
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
   }
 }
