@@ -58,7 +58,7 @@ function HomePage() {
     <div className="dashboard-container">
       <header className="dashboard-header">
         <div className="header-brand">
-          <span className="brand-logo">🍁</span>
+          <img src="/image.png" className="brand-logo-img" alt="Logo" />
           <h1 className="brand-title">Goal-Window</h1>
         </div>
         <div className="header-user-actions">
